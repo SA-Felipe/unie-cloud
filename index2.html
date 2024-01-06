@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo de Bienvenida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: red;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #saludoResultado {
+            display: none;
+            margin-top: 20px;
+        }
+        #imagenBienvenida {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <p>Ingresa tu nombre para recibir un saludo personalizado:</p>
+
+    <form id="saludoForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <button type="button" onclick="mostrarSaludo()">Mostrar Saludo</button>
+    </form>
+
+    <div id="saludoResultado">
+        <!-- El saludo se mostrará aquí -->
+    </div>
+
+    <img id="imagenBienvenida" src="C:\Users\DELL\Pictures\Felipe UNIE.png" alt="Bienvenida">
+
+    <script>
+        function mostrarSaludo() {
+            var nombreUsuario = document.getElementById('nombre').value;
+            var saludoResultado = document.getElementById('saludoResultado');
+            
+            if (nombreUsuario.trim() !== '') {
+                saludoResultado.innerHTML = '<p>Hola, ' + nombreUsuario + '! ¡Bienvenido!</p>';
+                saludoResultado.style.display = 'block';
+            } else {
+                alert('Por favor, ingresa tu nombre.');
+            }
+        }
+    </script>
+</body>
+</html>
